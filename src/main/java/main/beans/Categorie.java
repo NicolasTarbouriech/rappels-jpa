@@ -1,6 +1,6 @@
 package main.beans;
 
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -32,7 +32,7 @@ public class Categorie {
 	private String nom;
 
 	@Column(name = "date_maj")
-	private LocalDate date_maj;
+	private Date dateMaj; 
 
 	public Set<Film> getFilms() {
 		return films;
@@ -58,17 +58,17 @@ public class Categorie {
 		this.nom = nom;
 	}
 
-	public LocalDate getDate_maj() {
-		return date_maj;
+	public Date getDate_maj() {
+		return dateMaj;
 	}
 
-	public void setDate_maj(LocalDate date_maj) {
-		this.date_maj = date_maj;
+	public void setDate_maj(Date date_maj) {
+		this.dateMaj = date_maj;
 	}
 
 	@Override
 	public String toString() {
-		return "Categorie [id=" + id +  "nom=" + nom + ", date_maj=" + date_maj + "]";
+		return "Categorie [id=" + id +  "nom=" + nom + ", date_maj=" + dateMaj + "]";
 	}
 
 	

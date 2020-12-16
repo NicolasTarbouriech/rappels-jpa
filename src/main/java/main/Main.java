@@ -6,12 +6,14 @@ import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import main.beans.Acteur;
+import main.beans.ActeurRepository;
 import main.beans.Categorie;
 import main.beans.Film;
 
@@ -22,6 +24,9 @@ public class Main implements CommandLineRunner {
 	@PersistenceContext
 	private EntityManager em;
 
+	@Autowired
+	private ActeurRepository acteurRepo;
+	
 	public static void main(String[] args) {
 
 		// EntityManagerFactory entityManagerFactory =
@@ -79,7 +84,9 @@ public class Main implements CommandLineRunner {
 		Categorie cat13 = em.find(Categorie.class, 13);
 		em.remove(cat13);
 		 */
-		 
+		
+		 Acteur acteur = acteurRepo.findByNomAndPrenom("Simon", "Pegg");
+		 System.out.println(acteur);
 	}
 
 }
