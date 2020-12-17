@@ -55,7 +55,9 @@ public class Main implements CommandLineRunner {
 	@Override
 	@Transactional
 	public void run(String... args) throws Exception {
+		
 		/*
+		// creation d'un film
 		Film harrypotter = new Film();
 		Categorie cat = em.find(Categorie.class, 3);
 		harrypotter.setTitre("Harry Potter");
@@ -63,6 +65,7 @@ public class Main implements CommandLineRunner {
 		harrypotter.setCategorie(cat);
 		em.persist(harrypotter);
 
+		// creation des 3 acteurs, 1 realisateur, 1 producteur
 		Acteur acteur1 = new Acteur();
 		acteur1.setNom("acteur1");
 		acteur1.setPrenom("joli");
@@ -80,21 +83,21 @@ public class Main implements CommandLineRunner {
 		Producteur prod = new Producteur();
 		prod.setNom("prod1");
 
-		 */
-
+		 
+		// Associant de chaque intervenant a l'id qui leur correspond en bdd
 		Intervenant aa1 = em.find(Intervenant.class, 9);
 		Intervenant aa2 = em.find(Intervenant.class, 10);
 		Intervenant aa3 = em.find(Intervenant.class, 11);
 		Intervenant aa4 = em.find(Intervenant.class, 12);
-		Intervenant aa5 = em.find(Intervenant.class, 13);
+		Intervenant aa5 = em.find(Intervenant.class, 13); */
 
-		/*
+		/*// association du film a chaque intervenant
 		 * Film f = em.find(Film.class, 6); aa1.getFilms().add(f);
 		 * aa2.getFilms().add(f); aa3.getFilms().add(f); aa4.getFilms().add(f);
 		 * aa5.getFilms().add(f);
 		 */
 
-		/*
+		/*// Ajout de 5 adresses uniques a chaque intervenant
 		 * Adresse a1 = new Adresse(); em.persist(a1);
 		 * 
 		 * a1.setNumeroRue(45); a1.setLibelleRue("tourni"); a1.setVille("mtp");
@@ -128,10 +131,8 @@ public class Main implements CommandLineRunner {
 		 * aa5.getAdresses().add(a5);
 		 */
 
-		
-	
-		
-		TachesDatees td = new TachesDatees();
+		// Ajout d'une date écheance, date, description, a un intervenant (aa1 ici)
+	/*	TachesDatees td = new TachesDatees();
 		em.persist(td);
 		LocalDateTime ldt = LocalDateTime.of(2008, 02, 15, 14, 46, 27);
 		td.setDateEcheance(ldt);
@@ -140,7 +141,7 @@ public class Main implements CommandLineRunner {
 		td.setDate(dte);
 		td.setDescription("cascade");
 		aa1.getTaches().add(td); 
-		
+		*/
 
 	}
 
