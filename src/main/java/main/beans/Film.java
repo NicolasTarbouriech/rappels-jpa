@@ -23,9 +23,9 @@ public class Film {
 	private int id;
 
 	@ManyToMany
-	@JoinTable(name = "film_acteur", joinColumns = @JoinColumn(name = "id_film", referencedColumnName = "ID"),
-	inverseJoinColumns = @JoinColumn(name = "id_acteur", referencedColumnName = "ID"))
-	private Set<Acteur> acteurs;
+	@JoinTable(name = "film_intervenant", joinColumns = @JoinColumn(name = "id_film", referencedColumnName = "ID"),
+	inverseJoinColumns = @JoinColumn(name = "id_intervenant", referencedColumnName = "ID"))
+	private Set<Intervenant> intervenant;
 
 	@ManyToOne
 	@JoinColumn(name = "id_categ")
@@ -37,17 +37,16 @@ public class Film {
 	@Column(name = "annee_sortie")
 	private String anneeSortie;
 
-
 	public Film() {
 		super();
 	}
 
-	public Set<Acteur> getActeurs() {
-		return acteurs;
+	public Set<Intervenant> getIntervenant() {
+		return intervenant;
 	}
 
-	public void setActeurs(Set<Acteur> acteurs) {
-		this.acteurs = acteurs;
+	public void setIntervenant(Set<Intervenant> intervenant) {
+		this.intervenant = intervenant;
 	}
 
 	public Categorie getCategorie() {
@@ -85,8 +84,7 @@ public class Film {
 	@Override
 	public String toString() {
 		return "Film [id=" + id + ", titre=" + titre + "annee sortie : " + anneeSortie;
-			
-	}
 
+	}
 
 }
