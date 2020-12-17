@@ -21,6 +21,14 @@ import main.beans.Producteur;
 import main.beans.Realisateur;
 import main.beans.Taches;
 import main.beans.TachesDatees;
+import main.beans.dao.ActeurDao;
+import main.beans.dao.AdresseDao;
+import main.beans.dao.CategorieDao;
+import main.beans.dao.FilmDao;
+import main.beans.dao.ProducteurDao;
+import main.beans.dao.RealisateurDao;
+import main.beans.dao.TachesDao;
+import main.beans.dao.TachesDateesDao;
 import main.beans.Categorie;
 import main.repo.ActeurRepository;
 import main.repo.CategorieRepository;
@@ -64,25 +72,19 @@ public class Main implements CommandLineRunner {
 		harrypotter.setAnneeSortie("2020");
 		harrypotter.setCategorie(cat);
 		em.persist(harrypotter);
-
 		// creation des 3 acteurs, 1 realisateur, 1 producteur
 		Acteur acteur1 = new Acteur();
 		acteur1.setNom("acteur1");
 		acteur1.setPrenom("joli");
-
 		Acteur acteur2 = new Acteur();
 		acteur2.setNom("acteur2");
 		acteur2.setPrenom("jacke");
-
 		Acteur acteur3 = new Acteur();
 		acteur3.setNom("acteur3");
-
 		Realisateur real = new Realisateur();
 		real.setNom("real1");
-
 		Producteur prod = new Producteur();
 		prod.setNom("prod1");
-
 		 
 		// Associant de chaque intervenant a l'id qui leur correspond en bdd
 		Intervenant aa1 = em.find(Intervenant.class, 9);
@@ -142,7 +144,6 @@ public class Main implements CommandLineRunner {
 		td.setDescription("cascade");
 		aa1.getTaches().add(td); 
 		*/
-
 	}
 
 }

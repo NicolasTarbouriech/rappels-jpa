@@ -12,6 +12,10 @@ public class Acteur extends Intervenant {
 
 	private String prenom;
 
+	private String agence;
+	
+	private Double salaire;
+	
 	public String getNom() {
 		return nom;
 	}
@@ -28,4 +32,21 @@ public class Acteur extends Intervenant {
 		this.prenom = prenom;
 	}
 
+	public String getAgence() {
+		return agence;
+	}
+
+	public void setAgence(String agence) {
+		this.agence = agence;
+	}
+
+	public Double getSalaire() {
+		return salaire;
+	}
+
+	public void setSalaire(Double salaire) {
+		this.salaire = salaire;
+	}
+
+	
 }

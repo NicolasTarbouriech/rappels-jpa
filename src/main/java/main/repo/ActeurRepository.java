@@ -5,8 +5,9 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import main.beans.Acteur;
+import main.beans.Intervenant;
 
-public interface ActeurRepository extends JpaRepository<Acteur, Integer>{
+public interface ActeurRepository extends JpaRepository<Intervenant, Integer>{
 
-	public List<Acteur> findByNomAndPrenom(String nom, String prenom);
+	public Intervenant findByNomAndPrenom(String nom, String prenom);
 }
