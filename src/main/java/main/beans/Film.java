@@ -1,7 +1,9 @@
 package main.beans;
 
+import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,7 +27,7 @@ public class Film {
 	@ManyToMany
 	@JoinTable(name = "film_intervenant", joinColumns = @JoinColumn(name = "id_film", referencedColumnName = "ID"),
 	inverseJoinColumns = @JoinColumn(name = "id_intervenant", referencedColumnName = "ID"))
-	private Set<Intervenant> intervenant;
+	private Set<Intervenant> intervenant = new HashSet<>();
 
 	@ManyToOne
 	@JoinColumn(name = "id_categ")

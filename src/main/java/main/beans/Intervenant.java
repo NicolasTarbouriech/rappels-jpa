@@ -1,5 +1,6 @@
 package main.beans;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -32,13 +33,13 @@ public class Intervenant {
 	@ManyToMany
 	@JoinTable(name = "film_intervenant", joinColumns = @JoinColumn(name = "id_intervenant", referencedColumnName = "ID"),
 	inverseJoinColumns = @JoinColumn(name = "id_film", referencedColumnName = "ID"))
-	private Set<Film> films;
+	private Set<Film> films = new HashSet<>();
 	
 	@OneToMany(mappedBy = "intervenant")
-	private Set<Taches> taches;
+	private Set<Taches> taches = new HashSet<>();
 	
 	@OneToMany(mappedBy = "intervenant")
-	private Set<Adresse> adresses; // référence vers les films
+	private Set<Adresse> adresse = new HashSet<>(); // référence vers les films
 	
 	@Column(name = "nom")
 	private String nom;
@@ -67,12 +68,12 @@ public class Intervenant {
 		this.taches = taches;
 	}
 
-	public Set<Adresse> getAdresses() {
-		return adresses;
+	public Set<Adresse> getAdresse() {
+		return adresse;
 	}
 
-	public void setAdresses(Set<Adresse> adresses) {
-		this.adresses = adresses;
+	public void setAdresses(Set<Adresse> adresse) {
+		this.adresse = adresse;
 	}
 
 	public Set<Film> getFilms() {
