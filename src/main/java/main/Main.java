@@ -1,11 +1,8 @@
 package main;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
@@ -97,10 +94,10 @@ public class Main implements CommandLineRunner {
 		em.remove(cat13);
 		 */
 		
-		 Acteur acteur = acteurRepo.findByNomAndPrenom("Simon", "Pegg");
+		 List<Acteur> acteur = acteurRepo.findByNomAndPrenom("Simon", "Pegg");
 		 System.out.println(acteur);
 		 
-		 Film film = filmRepo.findByTitre("Deepwater");
+		 List<Film> film = filmRepo.findByTitre("Deepwater");
 		 System.out.println(film);
 		 
 		 LocalDateTime ldt = LocalDateTime.of(2006, 02, 15, 04, 46, 27);
