@@ -1,5 +1,8 @@
 package main;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -12,10 +15,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import java.util.List;
 import main.beans.Acteur;
 import main.beans.ActeurRepository;
 import main.beans.Categorie;
+import main.beans.CategorieRepository;
 import main.beans.Film;
+import main.beans.FilmRepository;
 
 @SpringBootApplication
 @EnableTransactionManagement
@@ -26,6 +32,12 @@ public class Main implements CommandLineRunner {
 
 	@Autowired
 	private ActeurRepository acteurRepo;
+	
+	@Autowired
+	private FilmRepository filmRepo;
+	
+	@Autowired
+	private CategorieRepository cateRepo;
 	
 	public static void main(String[] args) {
 
@@ -87,6 +99,13 @@ public class Main implements CommandLineRunner {
 		
 		 Acteur acteur = acteurRepo.findByNomAndPrenom("Simon", "Pegg");
 		 System.out.println(acteur);
+		 
+		 Film film = filmRepo.findByTitre("Deepwater");
+		 System.out.println(film);
+		 
+		 LocalDateTime ldt = LocalDateTime.of(2006, 02, 15, 04, 46, 27);
+		 List<Categorie> cate = cateRepo.findByDateMaj(ldt);
+		 System.out.println(cate);
 	}
 
 }

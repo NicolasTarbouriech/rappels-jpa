@@ -1,10 +1,12 @@
 package main.beans;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CategorieRepository extends JpaRepository<Categorie, Integer> {
 
-	public Categorie findByDateMaj(Date date_maj);
+	public List<Categorie> findByDateMaj(LocalDateTime date_maj);
 }

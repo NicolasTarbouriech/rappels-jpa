@@ -1,5 +1,7 @@
 package main.beans;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -32,7 +34,7 @@ public class Categorie {
 	private String nom;
 
 	@Column(name = "date_maj")
-	private Date dateMaj; 
+	private LocalDateTime dateMaj; 
 
 	public Set<Film> getFilms() {
 		return films;
@@ -58,11 +60,11 @@ public class Categorie {
 		this.nom = nom;
 	}
 
-	public Date getDate_maj() {
+	public LocalDateTime getDate_maj() {
 		return dateMaj;
 	}
 
-	public void setDate_maj(Date date_maj) {
+	public void setDate_maj(LocalDateTime date_maj) {
 		this.dateMaj = date_maj;
 	}
 
